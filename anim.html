@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      min-width: 100vw;
+    }
+
+    .animate-block {
+      width: 100%;
+      display: flex;
+    }
+
+
+
+    .mask {
+      display: inline-block;
+      height: 87px;
+      width: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .block {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      animation: slide 10s steps(5) infinite;
+
+    }
+
+    h1,
+    span {
+      display: inline-block;
+      height: 87px;
+      line-height: 87px;
+      font-size: 5rem;
+    }
+
+    span {
+      animation: hide 2s infinite;
+      width: 100%;
+    }
+
+    @keyframes slide {
+      100% {
+        top: -435px;
+      }
+    }
+
+    @keyframes hide {
+      0% {
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="animate-block">
+    <h1>بيع ,شراء , كراء &nbsp;</h1>
+    <div class="mask">
+      <div class="block">
+        <span>بيت</span>
+        <span>شقة</span>
+        <span>بيت مزدوج</span>
+        <span>عمارة</span>
+        <span>فيلا</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
